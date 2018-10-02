@@ -59,13 +59,11 @@ class CraftBotPauseAtLayer(Script):
         pause_layer = self.getSettingValueByKey("pause_layer")
         message = self.getSettingValueByKey("message").format(pause_layer)
         should_beep = self.getSettingValueByKey("should_beep")
-        beep_duration = 200 # 100 = 1 sec
-        beep_tone = 100
 
         # Construct gcode to insert
         gcode_block = [";TYPE:CUSTOM", ";pause added by post processing", ";script: PauseAtLayerCraftBot.py"]
         if should_beep:
-            gcode_block.append("M300 P200 S100 ;beep")
+            gcode_block.append("M300 P2000 S50 ;beep")
         gcode_block.append(self.putValue(G=197) + " " + message + " ;pause")
         # gcode_block.append(self.putValue(G=198) + " ;resume print")
 
