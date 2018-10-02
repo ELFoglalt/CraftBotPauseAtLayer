@@ -2,7 +2,7 @@ from ..Script import Script
 from UM.Logger import Logger
 import re
 
-class PauseAtLayerCraftBot(Script):
+class CraftBotPauseAtLayer(Script):
     def __init__(self):
         super().__init__()
 
@@ -12,7 +12,7 @@ class PauseAtLayerCraftBot(Script):
         return """{
             "name":"Pause at layer (CraftBot)",
             "description": "Triggers a pause before a specified layer.",
-            "key": "PauseAtHeightCraftBot",
+            "key": "CraftBotPauseAtLayer",
             "metadata": {},
             "version": 2,
             "settings":
